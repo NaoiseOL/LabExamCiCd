@@ -17,4 +17,16 @@ public class ServiceController {
         myList.add(product);
         return myList;
     }
+
+    public List<Product> updateProduct(String productCode, Product product){
+        for(Product p: myList){
+            if(p.getProductCode().equals(productCode)){
+                p.setProductName(product.getProductName());
+                p.setCategory(product.getCategory());
+                p.setQuantity(product.getQuantity());
+                p.setPrice(product.getPrice());
+            }
+        }
+        return myList;
+    }
 }
