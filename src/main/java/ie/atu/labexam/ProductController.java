@@ -1,10 +1,7 @@
 package ie.atu.labexam;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.Array;
 import java.util.ArrayList;
@@ -25,6 +22,12 @@ public class ProductController {
     @GetMapping
     public List<Product> getProducts(){
         list = myService.getProducts();
+        return list;
+    }
+
+    @PostMapping
+    public List<Product> addProducts(@RequestBody Product product){
+        list=myService.addProducts(product);
         return list;
     }
 

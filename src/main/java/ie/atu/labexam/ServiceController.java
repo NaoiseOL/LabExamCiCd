@@ -12,4 +12,9 @@ public class ServiceController {
     public List<Product> getProducts(){
         return myList;
     }
+
+    public List<Product> addProducts(Product product){
+        myList.add(product);
+        return myList;
+    }
 }
