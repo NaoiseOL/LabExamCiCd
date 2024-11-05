@@ -29,4 +29,13 @@ public class ServiceController {
         }
         return myList;
     }
+
+    public List<Product> deleteProduct(String productCode){
+        for(Product p: myList){
+            if(p.getProductCode().equals(productCode)){
+                myList.remove(p);
+            }
+        }
+        return myList;
+    }
 }
